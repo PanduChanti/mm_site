@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import "./Stream.css"
+import ReactPlayer from "react-player"
 
 function Stream() {
   const [id, getId] = useState(localStorage.getItem("btnId"))
@@ -48,9 +49,10 @@ function Stream() {
             </div>
             <div className="row">
               <div className="col-md-12">
-                <video className="object-fit-cover col-md-9" autoplay controls>
-                  <source src={data.movie} />
-                </video>
+                {/* <video className="object-fit-cover col-md-9" autoplay controls>
+                  <source src={data.movie} type="video/mp4, video/x-matroska" />
+                </video> */}
+                <ReactPlayer url={data.movie} controls playing />
               </div>
             </div>
           </div>
