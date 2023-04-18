@@ -1,0 +1,26 @@
+#mycon {
+    overflow: hidden;
+    position: relative;
+    object-fit: fill;
+}
+
+header {
+    padding: 40px;
+}
+
+#myImage {
+    border-top-right-radius: 120px;
+    border-bottom-left-radius: 120px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    object-fit: cover;
+
+}
+
+#myCard {
+    transition: all 0.2s ease-in-out;
+}
+
+#myCard:hover {
+    transform: scaleX(101%);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
