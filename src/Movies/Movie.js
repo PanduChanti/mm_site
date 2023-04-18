@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react"
 
 import Navbar from "../components/Navbar.js"
+import { Link } from "react-router-dom"
+import Stream from "../Stream/Stream.js"
 
 import "./Movie.css"
 
@@ -9,9 +11,6 @@ import Button from "react-bootstrap/Button"
 function Movie() {
   const [data, setData] = useState([])
 
-  function navigateToStreamPage() {
-    window.location.href = "/stream"
-  }
   useEffect(() => {
     fetch("http://127.0.0.1:8000/movielist/")
       .then((response) => response.json())
@@ -50,7 +49,7 @@ function Movie() {
                               {data.language}
                             </p>
 
-                            <Button
+                            {/* <Button
                               variant="primary"
                               id="btn-video"
                               onClick={() => {
@@ -60,7 +59,18 @@ function Movie() {
                               key={data.id}
                             >
                               Play Now
-                            </Button>
+                            </Button> */}
+                            <Link
+                              className="btn btn-primary"
+                              to="/Stream"
+                              id="btn-video"
+                              onClick={() => {
+                                localStorage.setItem("btnId", data.id)
+                              }}
+                              key={data.id}
+                            >
+                              Play Now
+                            </Link>
                           </div>
                         </div>
                       </>
