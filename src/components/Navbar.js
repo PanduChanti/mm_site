@@ -1,6 +1,7 @@
 import React from "react"
 import Movie from "../Movies/Movie.js"
 import Music from "../Music/Music.js"
+import Admin from "../Admin/Admin.js"
 import { Link } from "react-router-dom"
 
 function Navbar() {
@@ -34,6 +35,11 @@ function Navbar() {
               <li className="nav-item">
                 <Link className="nav-link" to="/Music">
                   Music
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/Admin">
+                  Admin
                 </Link>
               </li>
             </ul>
